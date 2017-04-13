@@ -717,11 +717,12 @@ tcpcon_send_packet(
     /*
      * KLUDGE:
      */
-    if (ctrl & CTRL_SMALL_WINDOW) {
-        tcp_set_window(response->px, response->length, 600);
-    }
-    tcp_set_window(response->px, response->length, 600);
-
+// 	WTF???
+//     if (ctrl & CTRL_SMALL_WINDOW) {
+//         tcp_set_window(response->px, response->length, 600);
+//     }
+//     tcp_set_window(response->px, response->length, 600);
+    tcp_set_window(response->px, response->length, 4096);
     /* If we have payload, then:
      * 1. remember the payload so we can resend it
      */

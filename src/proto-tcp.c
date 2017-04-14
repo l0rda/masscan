@@ -721,7 +721,7 @@ tcpcon_send_packet(
         tcp_set_window(response->px, response->length, 600);
     }
 
-    tcp_set_window(response->px, response->length, 4096);
+    tcp_set_window(response->px, response->length, 8192);
     /* If we have payload, then:
      * 1. remember the payload so we can resend it
      */

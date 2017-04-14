@@ -32,7 +32,7 @@ static unsigned char default_tcp_template[] =
     "\x00\x30"      /* total length = 40 bytes */
     "\x00\x00"      /* identification */
     "\x00\x00"      /* fragmentation flags */
-    "\xFF\x06"      /* TTL=255, proto=TCP */
+    "\x41\x06"      /* TTL=65, proto=TCP */
     "\xFF\xFF"      /* checksum */
     "\0\0\0\0"      /* source address */
     "\0\0\0\0"      /* destination address */
@@ -43,7 +43,7 @@ static unsigned char default_tcp_template[] =
     "\0\0\0\0"      /* ack number */
     "\x70"          /* header length */
     "\x02"          /* SYN */
-    "\x04\x0"        /* window fixed to 1024 */
+    "\x10\x00"      /* window fixed to 4096 */
     "\xFF\xFF"      /* checksum */
     "\x00\x00"      /* urgent pointer */
     "\x02\x04\x05\xb4"  /* added options [mss 1460] */

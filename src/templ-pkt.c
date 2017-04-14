@@ -31,7 +31,7 @@ static unsigned char default_tcp_template[] =
     "\x00"
     "\x00\x30"      /* total length = 40 bytes */
     "\x00\x00"      /* identification */
-    "\x00\x00"      /* fragmentation flags */
+    "\x40\x00"      /* fragmentation flags: DF */
     "\x41\x06"      /* TTL=65, proto=TCP */
     "\xFF\xFF"      /* checksum */
     "\0\0\0\0"      /* source address */
@@ -43,7 +43,7 @@ static unsigned char default_tcp_template[] =
     "\0\0\0\0"      /* ack number */
     "\x70"          /* header length */
     "\x02"          /* SYN */
-    "\x10\x00"      /* window fixed to 4096 */
+    "\x20\x00"      /* window fixed to 8192, also must fix in src/proto-tcp.c:723 */
     "\xFF\xFF"      /* checksum */
     "\x00\x00"      /* urgent pointer */
     "\x02\x04\x05\xb4"  /* added options [mss 1460] */
